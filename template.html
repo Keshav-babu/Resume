@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* #main{
+            display: flex;
+            border: 1px solid red;
+            width: 50%;
+            height: 400px;
+            margin: auto;
+        } */
+        #g{
+            display: grid;
+            height: 400px;
+            width: 70%;
+            /* border: 1px solid red; */
+            grid-template-columns: repeat(3,30%);
+            grid-template-rows: repeat(1,100%);
+            gap: 5%;
+            margin: auto;
+        }
+        img{
+            /* border: 5px solid greenyellow; */
+            width: 100%;
+            height: 98%;
+            
+        }
+        .one{
+            display: none;
+        }
+        .r{
+            background-color: black;
+        }
+        h1,h2{
+            margin: 10px auto;
+            /* border: 1px solid green; */
+            width: fit-content;
+        }
+        h2:hover{
+            cursor: pointer;
+        }
+        #temp{
+            display: grid;
+            margin: 20px auto auto auto;
+            /* border: 1px solid red; */
+            height: 800px;
+            width: 50%;
+            grid-template-rows: 95% 1%;
+            
+            
+        }
+        #choosen_temp{
+            margin: auto;
+            /* border: 5px solid red; */
+            
+            
+        }
+        p{
+            margin-left: 90%;
+            /* width: 50px; */
+            border:  1px solid black;
+            height: fit-content;
+            width: fit-content;
+           
+        }
+        p:hover{
+            cursor: pointer;
+            color: blue;
+        }
+        #form{
+            display: flex;
+            width: 60%;
+            height:fit-content;
+            border: 1px solid red;
+        }
+        form,#right{
+            /* border: 1px solid black; */
+            width: 48%;
+            height: 100%;
+            margin-right: 2%;
+        }
+        input{
+            margin: 10px auto;
+            margin-left:2%;
+        }
+        label{
+            margin-left: 5px;
+        }
+        /* #workdiv,#skillsdiv{
+            border: 1px solid red;
+        } */
+        .workinp{
+            height: 50px;
+            width:96%;
+            margin: auto;
+        }
+        h4{
+            margin-bottom: -10px;
+        }
+        #score,#year_of_passing{
+            width:50px
+        }
+        .skill_inp{
+            height: 25px;
+            margin: 5px auto;
+            width: 96%;
+        }
+    </style>
+</head>
+<body>
+    <h1>Choose Template</h1>
+    <!-- <div id="main"></div> -->
+    <div id="g">
+        <img onmouseover="bigImg(this)" onmouseout="normalImg(this)" id="one"  src="https://dweebsglobal.org/wp-content/uploads/2020/03/resume-2-1.png" alt="">
+        <img onmouseover="bigImg(this)" onmouseout="normalImg(this)" id="two"  src="https://cdn-images.zety.com/templates/zety/cascade-3-duo-blue-navy-21@3x.png" alt="">
+        <img onmouseover="bigImg(this)" onmouseout="normalImg(this)" id="three" src="https://dweebsglobal.org/wp-content/uploads/2020/03/resume-3.jpg" alt="">
+        
+    </div>
+    <h2 onclick="select()">Select</h2>
+    <div id="temp">
+        <img id="choosen_temp" src="" alt="" srcset="">
+        <p>Choose</p>
+    </div>
+    <div id="form">
+        
+        <form action="submit" >
+            <h3>Personal Information</h3>
+            <label for="">Image url</label>
+            <input type="url" name="" id="input_img"> <br/>
+            <label for="">First Name</label>
+            <input type="text" name="" id="fname" placeholder="First Name"><br/>
+            <label for="">Last Name</label> 
+            <input type="text" name="" id="lname" placeholder="Last Name"><br/>
+            <label for="">Email id</label>
+            <input type="email" name="" id="email" placeholder="Write your email"><br/>
+            <label for="">Mobile</label>
+            <input type="Number" name="" id="phone" placeholder="Enter your mobile"><br/>
+            <label for="">Github</label>
+            <input type="url" name="" id="github" placeholder="paste your github profile"><br/>
+            <label for="">Linkedin</label>
+            <input type="url" id="linkedin" placeholder="paste your linkedin profile"><br/>
+            <label for="">Objectives</label><br/>
+            <textarea name="" id="obj" cols="55" rows="8"></textarea>
+            <input type="button" onclick="submit1()" value="Submit">
+        </form>
+        <div id="right">
+            <h3>Professional Information</h3>
+            <div id="workdiv">
+                <label for="">Work Experiences/Projects</label><br/>
+                <input type="text" name="" id="" placeholder="Company/Project"><br/>
+                <!-- <input class="workinp" type="text" name="" id="">  -->
+                <textarea class="workinp" name="" id=""></textarea>
+            </div>
+            <button onclick="addnewwork()">Add</button><br/>
+            <div id="skillsdiv">
+                <label for="">Skills</label>
+                <input class="skill_inp" type="text" name="" id=""> 
+            </div>
+            <button onclick="addnewskill()">Add</button><br/>
+            <div>
+                <h3>Enter your heighest Qualification</h3>
+                <label for="">College/School:</label>
+                <input type="text" name="" id="clg"><br/>
+                <label for="">Specialaziation</label>
+                <input type="text" name="" id="spl"><br/>
+                <label for="">Score</label>
+                <input type="text" name="" id="score">
+                <label for="">Year of passing</label>
+                <input type="text" name="" id="year_of_passing">
+
+            </div>
+        </div>
+            
+        
+    </div>
+    
+</body>
+<script>
+    document.getElementById("form").style.display='none'
+    function submit1(){
+        console.log("Submit")
+        let input_img=document.getElementById("input_img").value
+        let fname=document.getElementById('fname').value
+        let lname=document.getElementById('lname').value
+        let phone=document.getElementById("phone").value
+        let email=document.getElementById('email').value
+        let github=document.getElementById('github').value
+        let linkedin=document.getElementById('linkedin').value
+        let st=document.getElementById("skillsdiv").querySelectorAll("input")
+        let skill_arr=[]
+        let work=document.getElementById("workdiv").querySelectorAll("input")
+        let work_des=document.getElementById("workdiv").querySelectorAll("textarea")
+        let work_arr=[]
+        let objective=document.getElementById("obj").value
+        let clg=document.getElementById("clg").value
+        let spl=document.getElementById("spl").value
+        let score=document.getElementById("score").value
+        let pass=document.getElementById("year_of_passing").value
+        let education={
+            Colleage:clg,
+            Special:spl,
+            Score:score,
+            Pass:pass
+        }
+        
+        for(let i=0;i<work.length;i++){
+            let work_obj={
+                Title:work[i].value,
+                Des:work_des[i].value
+            }
+            work_arr.push(work_obj)
+        }
+        console.log(work_arr)
+        
+        for(e of st){
+           // console.log(e.value)
+            skill_arr.push(e.value)
+        }
+        let Personal_det={
+            Fname:fname,
+            Lname:lname,
+            Phone:phone,
+            Email:email,
+            Github:github,
+            Linkedin:linkedin,
+            url_Img1:input_img,
+            Skills:skill_arr,
+            Project:work_arr,
+            Objectives:objective,
+            Education:education
+        }
+        
+        
+       // console.log(Personal_det)
+        console.log(JSON.stringify(Personal_det))
+        let details=localStorage.getItem('details')
+        if (details==null){
+            localStorage.setItem("details",JSON.stringify(Personal_det))
+        }else{
+            localStorage.removeItem("details");
+            localStorage.setItem("details",JSON.stringify(Personal_det))
+        }
+        
+        
+        
+        
+
+        window.location.href='resume1.html'
+    }
+    
+    document.getElementById("temp").style.display='none'
+    var click_temp=""
+    function bigImg(x){
+        x.style.border='5px solid black'
+        document.querySelector("h2").style.backgroundColor = "red";
+        click_temp=x.id
+        console.log(click_temp)
+    }
+    function normalImg(x){
+        x.style.border='1px solid red'
+        document.querySelector("h2").style.backgroundColor = "blue";
+    }
+    function select(){
+        document.getElementById("g").style.display='none'
+        document.querySelector('h2').style.display='none'
+        document.getElementById("temp").style.display='grid'
+
+        let src=document.getElementById(click_temp).src
+        console.log(src)
+        document.getElementById("choosen_temp").src=src
+    }
+    document.querySelector('p').onclick=()=>{
+        console.log("p")
+        document.getElementById("temp").style.display='none'
+        document.querySelector('h1').style.display='none'
+        document.getElementById("form").style.display='flex'
+    }
+    
+    
+
+    // function ll(){
+    //     console.log(click_temp)
+    // }
+    var i=2
+    function addnewwork(){
+        
+        let inp=document.createElement('textarea')
+        inp.setAttribute('class','workinp')  
+        let inp1=document.createElement('input')
+        inp1.placeholder=`${i} Company/Project`
+        
+        
+        let insert=document.getElementById("workdiv")
+        
+        insert.append(inp1,inp)
+        i++
+    }
+    function addnewskill(){
+        let inp=document.createElement('input')
+   // inp.innerHTML=`<input class="workinp" type="text" name="" id="">`
+   inp.setAttribute('class','skill_inp')     
+   let insert=document.getElementById('skillsdiv')
+        insert.appendChild(inp)
+    }
+
+    //document.getElementById("g").style.display='none'
+</script>
+</html>
