@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #resume{
+            height: 600px;
+            height: fit-content;
+            width: 70%;
+            margin: auto;
+            /* border: 1px solid red; */
+            display: flex;
+        }
+        #left{
+            width: 30%;
+            /* border: 5px solid red; */
+        }
+        #img{
+            height: 150px;
+            width: 150px;
+            border-radius: 50%;
+            margin: auto 25%;
+            border: 1px solid red;
+            
+        }
+        h4{
+            margin-left: 25px;
+            margin-bottom: -10px;
+            color: rgb(97, 173, 21);
+            border-bottom: 1px solid black;
+        }
+        a{
+            /* border: 1px solid red; */
+            margin-left: 25px;
+            text-decoration: none;
+        }
+        #logo{
+            height:15px;
+            width: 15px;
+            margin: auto 10px; 
+        }
+        p{
+            margin-left: 25px;
+            /* width: fit-content; */
+        }
+        #right{
+            width: 70%;
+            /* border: 5px solid red; */
+        }
+        #obj{
+            /* border: 2px solid greenyellow; */
+            width: 95%;
+            height: 100px;
+            height: fit-content;
+        }
+        #project{
+            width: 95%;
+            height: fit-content;
+            /* border: 2px solid green; */
+            /* margin-left: 25px; */
+        }
+        h5{
+            margin-top: -4px;
+            margin-bottom: -8px;
+            color: rgb(97, 173, 21);
+            margin-left: 25px;
+        }
+        #btn{
+            background-color: chartreuse;
+        }
+    </style>
+</head>
+<body>
+    <div id="resume">
+        <div id="left">
+            <img id="img" src="https://dweebsglobal.org/wp-content/uploads/2020/03/resume-2-1.png" alt="">
+            <h2 style="margin-left: 25px;"></h2>
+            <p id="email"></p>
+            <p>Current Location : Darbhanga</p>
+            <p>Home Town : Darbhanga</p>
+            <p>Date of birth : 22/02/1999</p>
+            <p>Gender : M</p>
+            <a href="tel:+91" id="phone"></a>
+            <h4>Social media link</h4>
+            <p></p>
+            <a  href="" id="github"> <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" id="logo" alt="" srcset=""> Github </a><br/>
+            <p></p>
+            <a href="" id="linkedin"> <img id="logo" src="https://content.linkedin.com/content/dam/me/brand/en-us/brand-home/logos/In-Blue-Logo.png.original.png" alt="">Linkedin</a>
+            <h4>Skills</h4>
+            <ul id="skills"></ul>
+
+                
+            
+        </div>
+        <div id="right">
+            <div id="project" >
+                <h3>Projects</h3>
+                
+                <!--  <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia magnam asperiores, voluptatem, suscipit deserunt eaque corrupti sunt id, qui consectetur cupiditate voluptates perspiciatis! Eaque ea dicta beatae, provident quibusdam recusandae! </p>
+                <h5>pro 2</h5>
+                <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium voluptatem mollitia odio. Dolore beatae, vel placeat fuga deserunt molestiae iure mollitia recusandae perferendis, eos possimus est? Natus fugit odio dolorem. </p> -->
+            </div>
+            <div id="div_obj">
+                <h4>Objective</h4>
+                <p id="obj"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi aliquam, sapiente culpa, illum consequatur voluptas labore at quo explicabo facilis magnam aperiam adipisci eaque laudantium quam quis alias, id minima? </p>
+            </div>
+            <div id="edu">
+
+            </div>
+        </div>
+        
+    </div>
+    <button id="btn" onclick="print1()">Print CV</button>
+    
+</body>
+<script>
+    let details=JSON.parse(localStorage.getItem("details"))
+    console.log(details)
+    document.querySelector('h2').textContent=`${details.Fname +" "+details.Lname}`
+    var skill=details.Skills
+    var skill_div=document.getElementById("skills")
+    //console.log(skill)
+    for(i=0;i<skill.length;i++){
+        let li=document.createElement("li")
+        li.textContent=skill[i]
+        //console.log(li)
+        skill_div.append(li)
+    }
+    let phone=document.getElementById("phone").textContent=`Contact: ${details.Phone}`
+    let email=document.getElementById("email").textContent=`Email:- ${details.Email}`
+    let linkedin=document.getElementById("linkedin").href=`${details.Linkedin}`
+    let github=document.getElementById("github").href=`${details.Github}`
+    let img=document.getElementById("img").src=`${details.url_Img1}`
+    let projects=details.Project
+    
+    for(i=0;i<projects.length;i++){
+        let insert_project=document.getElementById("project")
+        let h4=document.createElement("h5")
+        h4.textContent=projects[i].Title
+        let p=document.createElement("p")
+        p.textContent=projects[i].Des
+        console.log(h4,p)
+        insert_project.append(h4,p)
+    }
+
+    let edu_det=details.Education
+    console.log(edu_det)
+    let edu=document.getElementById("edu")
+    let clg=document.createElement('p')
+    clg.innerHTML=`College: ${edu_det.Colleage}`
+    let spl=document.createElement('p')
+    spl.innerHTML=`Specialization: ${edu_det.Special}`
+    let score=document.createElement('p')
+    score.innerHTML=`Marks: ${edu_det.Score}`
+    let yp=document.createElement('p')
+    yp.innerHTML=`Year of  Passing: ${edu_det.Pass}`
+    edu.append(clg,spl,score,yp)
+
+    function print1(){
+       
+        document.getElementById("btn").style.display='none'
+        window.print()
+    }
+    // console.log(projects)
+    // let add=document.getElementById("add").innerHTML=`${<p>Current}`// Location: Kolkata</p><br/><p>Home Town: Darbhanga</p><br/><p>Date of Birth: 22nd frb 1999
+</script>
+</html>
