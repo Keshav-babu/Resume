@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #intro{
+            margin: auto;
+            width: 80%;
+            height: 200px;
+            /* border: 1px solid red; */
+            display: flex;
+        }
+        .intro_child_div{
+            width: 30%;
+            /* border: 1px solid green; */
+            margin-left: 3%;
+        }
+        .img~h3,h2{
+            margin: 1%;
+            color: blue;
+        }
+        /* h3{
+            margin: 1%;
+            color: blue;
+        } */
+        .img~p{
+            margin-left: 1%;
+            font-size: 19px;
+            /* font-family: 'Courier New', Courier, monospace; */
+        }
+        
+        .img{
+            height: 30%;
+            /* border: 1px solid yellowgreen; */
+        }
+        .random{
+            display: block;
+            width: 70%;
+            height: 600px;
+            border-radius: 10px;
+            border: 2px solid greenyellow;
+            margin: auto;
+            margin-bottom: 50px;
+        }
+        #works{
+            height: 300px;
+            width: 50%;
+            /* border: 1px solid red; */
+            margin: 50px auto 50px auto;
+        }
+        #step{
+            height: 20%;
+            display: flex;
+            /* border: 2px solid red; */
+        }
+        #step1,#step2,#step3{
+            width: 30%;
+            margin-left: 3%;
+            /* border: 2px solid green; */
+            background-color: rgb(247, 244, 244);
+        }
+        #log_sign{
+            height: 400px;
+            width: 30%;
+            /* border: 1px solid red; */
+            margin: 10px auto 10px auto;
+        }
+        #log_btn1,#sign_btn1{
+            width: 40%;
+            flex-grow: 1;
+            border: 5px solid green;
+            text-align: center;
+            background-color: rgb(243, 243, 243);
+        }
+        /* #login{
+            margin-top: 20%;
+            border: 5px solid greenyellow;   
+        } */
+        input[type=text]{
+            height: 30px;
+            margin-bottom: 20px;
+        }
+        #forgot{
+            text-align: right;
+            margin-top: -20px;
+        }
+        #forgot:hover{
+            cursor: pointer;
+            color: blue;
+        }
+        #signup{
+            height: 60%;
+            /* border: 5px solid greenyellow; */
+        }
+    </style>
+</head>
+<body>
+    <div id="main" style="background-image: url(https://images.pexels.com/photos/1939485/pexels-photo-1939485.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500);">
+    <h1>Welcome to resume making web-app</h1>
+    
+    <img class="random" src="https://s3.resume.io/cdn-cgi/image/width=770,height=350,dpr=1.5,fit=crop,gravity=top,quality=75,format=auto/uploads/local_template_image/image/488/persistent-resource/dublin-resume-templates.jpg" alt="" srcset="">
+    
+
+    <div id="intro">
+        <div class="intro_child_div">
+            <img class="img" src="https://cdn2.vectorstock.com/i/thumb-large/47/11/gold-crown-ribbon-winner-shiny-sign-black-vector-19624711.jpg" alt="" srcset="">
+            <h3>Make a Resume that wins interview</h3>
+            <p>Use our resume maker with its advanced
+                creation tools to tell a professional 
+                story that engages recruiters, hiring 
+                managers and even CEOs.
+            </p>
+        </div>
+        <div class="intro_child_div">
+            <img class="img" src="https://resume.io/assets/landing/home/resume-maker/feature-2-c00d48226e72fa836390cb05d5fad673a7b22ce1260dc8b70221899bdf8bacba.svg" alt="" srcset="">
+            <h3>Resume writing made easy</h3>
+            <p>Resume writing has never been this effortless. 
+                Pre-generated text, visual designs and more - 
+                all already integrated into the resume maker. 
+                Just fill in your details.
+            </p></div>
+        <div class="intro_child_div">
+            <img class="img" src="https://resume.io/assets/landing/home/resume-maker/feature-3-8e879b64ebc0737c31ab46c20249a3ef143909d9938311bceda8b869663784b6.svg" alt="" srcset="">
+            <h3>A recruiter-tested CV maker tool</h3>
+            <p>Our resume builder and its pre-generated
+                content are tested by recruiters and IT experts.
+                We help your CV become truly 
+                competitive in the hiring process.
+            </p>
+        </div>
+    </div>
+
+    <div id="works">
+        <div id="step">
+            <div id="step1">
+                <h3>1. Sign Up</h3>
+            </div>
+            <div id="step2"><h3>2. Create</h3></div>
+            <div id="step3"><h3>3. Download</h3></div>
+        </div>
+        <div id="step1_cont" style="display: flex;">
+            <div style="width: 60%;">
+                <h2>Your First Step</h2>
+                <p style="font-size: 19px;">We’ve made sure that signing up to our resume 
+                    maker tools is even more convenient than usual. 
+                    Use one of the most common networks used by professionals 
+                    (LinkedIn, Facebook or your Google account) or simply skip 
+                    this step and enter your name and email address.
+                     We keep your data strictly confidential. </p>
+                
+            </div>
+            <img style=" display: block; width: 40%;" src="https://resume.io/assets/landing/home/how/sign_up-bf930bfe1e45333a17fb262a31bef7f36e085820806d64f82965ff0f73ebc413.svg" alt="" srcset="">
+        </div>
+        <div id="step2_cont" style="display: flex;">
+            <div style="width: 60%;">
+                <h2>Achieve Beauty With Ease</h2>
+                <p style="font-size: 19px;">Choose one of our beautiful, professionally
+                     designed resume or cover letter formats. Add your personal info and
+                      choose and edit the necessary sections. Customize the layout and visuals
+                       as much (or as little) as you want. We provide a ton of ready content with 
+                    lots of room for your own creativity and needs. </p>
+                
+            </div>
+            <img style=" display: block; width: 40%;" src="https://resume.io/assets/landing/home/how/create-885f73e3e1c7467963213e77195a1b637b07bf5cbd43e92f92fe1fe73d94afc3.svg" alt="" srcset="">
+        </div>
+        <div id="step3_cont" style="display: flex;">
+            <div style="width: 60%;">
+                <h2>Now It's Yours!</h2>
+                <p style="font-size: 19px;">Export your new resume, CV or application
+                     letter in one of the available formats. PDF will provide you with
+                      the best and most consistent visual formatting. Word files allow
+                       you to edit the document further or submit the resume to an online application system.
+                     You can also share your career updates online. </p>
+                
+            </div>
+            <img style="display: block; width: 40%;" src="https://resume.io/assets/landing/home/how/download-bb876ff64b92b80d623d30af7e0abdc754ed7be7c719c0aeadd5eea2052c4a4f.svg" alt="" srcset="">
+        </div>
+
+        
+    </div>
+    <button id="log_btn" style="display: block; margin:10px auto 10px auto; width: 120px; color: blue;">Login / Sign Up</button>
+    
+    </div>
+    <div id="log_sign">
+        <div style="margin-bottom: 10px; display: flex; height: 15%; gap: 10px;">
+            <div id="log_btn1"><h2>Login</h2></div>
+            <div id="sign_btn1"><h2>Sign Up</h2></div>
+        </div>
+        <div >
+            <div id="login">
+                <form action="Submit">
+                    Email: <input type="text" name="" style="margin-left: 22px;" id="logemail"><br/>
+                    Password: <input type="password" id="logpassword" ><br/>
+                    <input type="button" value="Login" onclick="login()">
+                </form>
+                <p id="forgot" >Forgot Password?</p>
+                
+            </div>
+            <div>
+                <div id="change_password">
+                    <input type="text" name="" placeholder="Enter your email" id="change_pass_inp_email">
+                    <input type="button" value="Send OTP" onclick="fun_otp()">
+                </div>
+                <div id="enter_otp">
+                    <input type="number" name="" id="ent_otp" placeholder="Enter 4 digit OTP">
+                    <input type="submit" value="Validate Password" onclick="valid_otp()">
+                </div>
+                <div id="ch_password">
+                    <input type="text" type="password" placeholder="Enter Password" id="inp_new_pass">
+                    <input type="submit" onclick="upd_pass()" value="Update Password">
+
+                </div>
+            </div>
+            <div id="signup">
+                Name:- <input type="text" name="" style="margin-left: 22px;"  id="sign_name"><br/>
+                Email:- <input type="text" style="margin-left: 22px;"  name="" id="sign_email"><br/>
+                Password:- <input type="password" name="" id="sign_password"><br/>
+                <input type="submit" value="Sign Up" onclick="signup()">
+
+            </div>
+            
+            
+        </div>
+        
+
+    </div>
+    
+</body>
+<script>
+    // setTimeout(() => {
+    //     alert("please Sign Up/login")
+    // }, 3000);
+    document.getElementById("step2_cont").style.display="none"
+    document.getElementById("step3_cont").style.display="none"
+
+    let step1=document.getElementById("step1")
+    let step2=document.getElementById("step2")
+    let step3=document.getElementById("step3")
+    step2.onclick=()=>{
+        document.getElementById("step2_cont").style.display="flex"
+        document.getElementById("step1_cont").style.display="none"
+        document.getElementById("step3_cont").style.display="none"
+    }
+    step3.onclick=()=>{
+        document.getElementById("step3_cont").style.display="flex"
+        document.getElementById("step2_cont").style.display="none"
+
+    }
+    var login_signup_div=document.getElementById("log_sign")
+    login_signup_div.style.display="none"
+    let log_btn=document.getElementById("log_btn")
+    log_btn.onclick=()=>{
+        document.getElementById("main").style.display="none"
+        login_signup_div.style.display="block"
+      
+    }
+    // document.getElementById("main").style.display="none"
+
+    let change_password_box=document.getElementById("change_password")
+    change_password_box.style.display="none"
+    let otp_inp=document.getElementById("enter_otp")
+    otp_inp.style.display="none"
+
+    let forgot_fun=document.getElementById("forgot")
+
+    forgot_fun.onclick=()=>{
+        document.getElementById("login").style.display="none"
+        change_password_box.style.display="block"
+    }
+    var otp=Math.floor(Math.random()*10000)
+    function fun_otp(){
+    
+        console.log(otp)
+        
+       
+        let enter_email=document.getElementById("change_pass_inp_email").value
+        console.log(enter_email)
+        let all_user=JSON.parse(localStorage.getItem("resume"))
+        let str=false
+        all_user.forEach(element=>{
+            if(element.Email==enter_email){
+                str=true
+            }
+        })
+        if(!str){
+            alert("We could not find account with the details you entered")
+        }else{
+            alert("Open Your Console To see OTP")
+            document.getElementById("change_password").style.display="none"
+            otp_inp.style.display='block'
+        }
+        
+        
+    }
+    function valid_otp(){
+        let ent_otp=document.getElementById("ent_otp").value
+        if(ent_otp==otp){
+            otp_inp.style.display="none"
+            ch_password.style.display="block"
+        }else{
+            alert("You have enter wrong OTP")
+        }
+    }
+    var ch_password=document.getElementById("ch_password")
+    ch_password.style.display="none"
+
+    function upd_pass(){
+        let upd_password=document.getElementById("inp_new_pass").value
+        console.log(upd_password)
+        
+        let all_user=JSON.parse(localStorage.getItem("resume"))
+        let enter_email=document.getElementById("change_pass_inp_email").value
+        all_user.forEach(element=>{
+            if(element.Email==enter_email){
+                element.Password=upd_password
+                console.log("new pass",element.Password)
+                console.log(all_user)
+                localStorage.setItem("resume",JSON.stringify(all_user))
+            }
+        })
+       
+    }
+    let logbtn=document.getElementById("log_btn1")
+    logbtn.onclick=()=>{
+        document.getElementById("login").style.display="block"
+        document.getElementById("signup").style.display="none"
+        ch_password.style.display="none"
+    }
+    let signbtn=document.getElementById("sign_btn1")
+    document.getElementById("signup").style.display="none"
+    
+    signbtn.onclick=()=>{
+        document.getElementById("login").style.display="none"
+        document.getElementById("signup").style.display="block"
+    }
+
+    var arr=JSON.parse(localStorage.getItem("resume"))||[]
+
+    function signup(){
+        let name=document.getElementById("sign_name").value
+        let email=document.getElementById("sign_email").value
+        let password=document.getElementById("sign_password").value
+        let user_det={
+            Name:name,
+            Email:email,
+            Password:password
+        }
+        // user_det=JSON.stringify(user_det)
+        arr.push(user_det)
+        arr=JSON.stringify(arr)
+        localStorage.setItem("resume",arr)
+        document.getElementById("sign_name").value=""
+        document.getElementById("sign_email").value=""
+        document.getElementById("sign_password").value=""
+    }
+
+    function login(){
+        
+        let email=document.getElementById("logemail").value
+        let password=document.getElementById("logpassword").value
+        let all_user=JSON.parse(localStorage.getItem("resume"))
+        //console.log(all_user)
+        if (all_user===null){
+            alert("Please Sign Up")
+        }else{
+            // let valid='false'
+            all_user.forEach(element => {
+                if(element.Email==email && element.Password==password){
+                    console.log("Match")
+                    // alert("You are logged in")
+
+                    document.location.href="template.html"
+                }
+                
+                
+            });
+            
+
+        }
+        
+
+        document.getElementById("logemail").value=""
+        document.getElementById("logpassword").value=""
+    }
+    
+    
+    
+    
+    
+</script>
+</html>
