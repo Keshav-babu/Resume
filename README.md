@@ -17,6 +17,13 @@ their resume and then download it.
 3) Form validation
 4) Preview and download option
 
+**Steps to run Website Locally** ☀️
+1) 1) Open GitBash in the location you want to clone and store the files
+2) Copy-Paste the command "git clone https://github.com/Keshav-babu/Resume_project.git" on the terminal and run it
+3) go to the directory
+4) go to file index.html right click and then copy path and paste  to browser
+
+
 
 **Images of the Website** 🥰
 
